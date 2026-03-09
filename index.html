@@ -545,7 +545,7 @@
       </div>
 
       <!-- Project 5 -->
-      <div class="col-lg-4 col-md-6 portfolio-item">
+      <div class="col-lg-8 col-md-12 portfolio-item">
         <img src="assets/img/portfolio/regional-project.png" class="img-fluid" alt="">
         <div class="portfolio-info">
           <h4>Regional Enterprise System Projects</h4>
@@ -1046,7 +1046,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <p>Send us a message and our consulting team will respond shortly.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -1085,7 +1085,7 @@
           </div>
 
           <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <form id="contact-form" data-aos="fade-up" data-aos-delay="200">
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -1114,10 +1114,36 @@
                   <div class="sent-message">Your message has been sent. Thank you!</div>
 
                   <button type="submit">Send Message</button>
+                   <p id="form-status"></p>
                 </div>
 
               </div>
             </form>
+            <script>
+
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+
+event.preventDefault();
+
+emailjs.sendForm(
+"service_rusb7vl",
+"template_4244o8y",
+this
+).then(function(){
+
+document.getElementById("form-status").innerHTML =
+"✅ Message sent successfully!";
+
+}, function(error){
+
+document.getElementById("form-status").innerHTML =
+"❌ Failed to send message.";
+
+});
+
+});
+
+</script>
           </div><!-- End Contact Form -->
 
         </div>
@@ -1226,7 +1252,11 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
+<script>
+(function(){
+emailjs.init("_Hay8iUKRr5SIKUFU");
+})();
+</script>
 </body>
 
 </html>
