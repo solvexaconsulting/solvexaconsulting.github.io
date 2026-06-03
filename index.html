@@ -7,7 +7,13 @@
   <title>Solvexa Consulting - Guiding Your Success</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="
+default-src 'self' https:;
+script-src 'self' 'unsafe-inline' 'unsafe-eval' https:;
+style-src 'self' 'unsafe-inline' https:;
+img-src 'self' data: https:;
+frame-src 'self' https://www.google.com;
+">
   
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
