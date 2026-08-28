@@ -1492,9 +1492,10 @@ section,
 .portfolio .portfolio-item {
   position: relative;
   overflow: hidden;
+   align-self: flex-start;
 }
 
-#portfolio .portfolio-item > img {
+.portfolio .portfolio-item > img {
   display: block;
   width: 100%;
   height: auto;
